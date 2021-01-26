@@ -1,4 +1,4 @@
-export default employee_data = [
+const employee_data = [
   {
     name: "Beyonce Knowles",
     department: "Music",
@@ -35,3 +35,5 @@ export default employee_data = [
     age: 39,
   },
 ];
+
+export default employee_data;

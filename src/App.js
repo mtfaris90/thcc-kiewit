@@ -1,8 +1,11 @@
-import React from 'react';
+import React from "react";
+import EmployeeList from "./EmployeeList";
 
 function App() {
-    return (
-        <div>Hello Worldssss!</div>
-    );
+  return (
+    <div>
+      <EmployeeList />
+    </div>
+  );
 }
 export default App;
