@@ -2,7 +2,7 @@ import React from "react";
 
 const Employee = ({ name, dept, age }) => {
   return (
-    <div>
+    <div className="employee">
       {name}<br/>
       {dept}<br/>
       {age}<br/>

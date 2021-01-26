@@ -4,7 +4,7 @@ import Employee from "./Employee";
 
 const EmployeeList = () => {
   return (
-    <div>Employee List
+    <div className="list">
       {employee_data.map((employee) => <Employee name={employee.name} dept={employee.department} age={employee.age} />)}
     </div>
   )
