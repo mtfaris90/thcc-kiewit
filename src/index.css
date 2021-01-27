@@ -1,7 +1,29 @@
-* {
+div {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: white;
   color: black;
+  padding: 10px;
+}
+.app {
+  background-color: red;
+}
+header {
+  margin: auto;
+  text-align: center;
+  font-size: 50px;
+  
+}
+.list {
+  background-color: orange;
+}
+.employee {
+  background-color: yellow;
+}
+.filter {
+  background-color: green;
+}
+.search {
+  background-color: blue;
 }

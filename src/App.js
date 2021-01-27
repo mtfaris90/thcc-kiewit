@@ -7,7 +7,7 @@ import employee_data from "./data";
 function App() {
   return (
     <div className="app">
-        Employee List
+        <header>Employee List</header>
       <Search />
       <Filter data={employee_data}/>
       <EmployeeList data={employee_data}/>
