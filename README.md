@@ -9,4 +9,6 @@ Run
 ```npm install```, then
 ```npm start```.
 
+Access web application in browser at http://localhost:8080/.
+
 By Matthew Faris

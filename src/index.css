@@ -6,24 +6,8 @@ div {
   color: black;
   padding: 10px;
 }
-.app {
-  background-color: red;
-}
 header {
   margin: auto;
   text-align: center;
   font-size: 50px;
-  
-}
-.list {
-  background-color: orange;
-}
-.employee {
-  background-color: yellow;
-}
-.filter {
-  background-color: green;
-}
-.search {
-  background-color: blue;
 }
