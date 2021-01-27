@@ -1,11 +1,10 @@
 import React from "react";
-import employee_data from "./data";
 import Employee from "./Employee";
 
-const EmployeeList = () => {
+const EmployeeList = ({data}) => {
   return (
     <div className="list">
-      {employee_data.map((employee) => <Employee name={employee.name} dept={employee.department} age={employee.age} />)}
+      {data.map((employee, i) => <Employee key={i} name={employee.name} dept={employee.department} age={employee.age} />)}
     </div>
   )
 }
