@@ -1,36 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Filter = ({ data }) => {
-  const depts = {};
-  const ages = {};
-  data.forEach((datum) => {
-
-  })
+const Filter = ({ setDept, setAge }) => {
   return (
     <div className="filter">
       <form>
         <label>
           Filter By Department:
-          <select>
+          <select value="all" onChange={(e) => setDept(e.target.value)}>
             <option value="all">All</option>
             <option value="music">Music</option>
             <option value="film">Film</option>
             <option value="sports">Sports</option>
           </select>
         </label>
-        <input type="submit" value="Submit" />
       </form>
       <form>
         <label>
           Filter By Age:
-          <select>
+          <select value="all" onChange={(e) => setAge(e.target.value)}>
             <option value="all">All</option>
-            <option value="30-">Under 30</option>
-            <option value="30-40">30-40</option>
-            <option value="40+">Over 40</option>
+            <option value="u30">Under 30</option>
+            <option value="u40">30-40</option>
+            <option value="40o">Over 40</option>
           </select>
         </label>
-        <input type="submit" value="Submit" />
       </form>
     </div>
   );
