@@ -1,44 +1,38 @@
 import React, { useEffect, useState } from "react";
 import Employee from "./Employee";
+import employee_data from "./data";
 
-const EmployeeList = ({ data, selection, dept, age }) => {
-  const [list, setList] = useState(data);
+const EmployeeList = ({ selection, dept, age }) => {
+  const [employees, setEmployees] = useState(employee_data);
   useEffect(() => {
-    const newList = data.filter((datum) =>
-      datum.name.toLowerCase().includes(selection)
-    );
-    setList(newList);
-  }, [selection]);
-  useEffect(() => {
-    if (dept !== "all") {
-      const newList = data.filter(
-        (datum) => datum.department.toLowerCase() === dept
+    setEmployees(employee_data);
+    if (selection !== "") {
+      setEmployees(
+        employees.filter((item) =>
+          item.name.toLowerCase().includes(selection.toLowerCase())
+        )
       );
-      setList(newList);
     }
-  }, [dept]);
-  useEffect(() => {
-    if (age === "u30") {
-      const newList = data.filter((datum) => {
-        return datum.age < 30;
-      });
-      setList(newList);
-    } else if (age === "u40") {
-      const newList = data.filter((datum) => {
-        return datum.age >= 30 && datum.age < 40;
-      });
-      setList(newList);
-    } else if (age === "40o") {
-      const newList = data.filter((datum) => {
-        return datum.age >= 40;
-      });
-      setList(newList);
+    if (dept !== "all") {
+      setEmployees(
+        employees.filter((item) => item.department.toLowerCase() === dept)
+      );
     }
-  }, [age]);
-
+    if (age !== "all") {
+      if (age === "u30") {
+        setEmployees(employees.filter((item) => item.age < 30));
+      } else if (age === "u40") {
+        setEmployees(
+          employees.filter((item) => item.age >= 30 && item.age <= 40)
+        );
+      } else if (age === "o40") {
+        setEmployees(employees.filter((item) => item.age >= 40));
+      }
+    }
+  }, [selection, dept, age]);
   return (
     <div className="list">
-      {list.map((employee, i) => (
+      {employees.map((employee, i) => (
         <Employee
           key={i}
           name={employee.name}

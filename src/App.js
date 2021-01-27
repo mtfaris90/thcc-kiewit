@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import EmployeeList from "./EmployeeList";
 import Search from "./Search";
 import Filter from "./Filter";
-import employee_data from "./data";
 
 const App = () => {
   const [selection, setSelection] = useState("");
@@ -12,13 +11,8 @@ const App = () => {
     <div className="app">
       <header>Employee List</header>
       <Search selection={selection} setSelection={setSelection} />
-      <Filter setAge={setAge} setDept={setDept} data={employee_data} />
-      <EmployeeList
-        data={employee_data}
-        selection={selection}
-        dept={dept}
-        age={age}
-      />
+      <Filter age={age} setAge={setAge} dept={dept} setDept={setDept} />
+      <EmployeeList selection={selection} dept={dept} age={age} />
     </div>
   );
 };
